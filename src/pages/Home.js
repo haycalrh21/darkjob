@@ -9,28 +9,24 @@ const Home = () => {
       id: 1,
       title: "Web",
       content: "Isinya adalah bikin website dll",
-      harga: "RP 4.500.000",
+      content2: "revisi 3X",
+
+      harga: "RP 4.000.000/Nego",
     },
     {
       id: 2,
       title: " Aplikasi Desktop",
       content: "Isinya adalah bikin tampilan Java Netbeans Desktop",
-      harga: "RP 4.500.000",
+      content2: "revisi 3X",
+      harga: "RP 1.500.000/Nego",
     },
     {
       id: 3,
       title: "Penulisan Skripsi IT",
-      content: "Penulisan Skripsi IT",
-      harga: "RP 4.500.000",
-    },
-    {
-      id: 4,
-      title: "Penulisan Skripsi BK",
-      content: "Penulisan Skripsi BK",
-      content2: "Penulisan Skripsi BK",
-      content3: "Penulisan Skripsi BK",
-      harga: "RP 4.500.000",
-    },
+      content: "Penulisan Bab 1-5",
+      content2: "revisi 3X",
+      harga: "RP 3.500.000/Nego",
+    }
   ];
 
   const layananRef = useRef(null);
@@ -57,6 +53,17 @@ const Home = () => {
       harga1: "RP 1.500.000",
     },
   ];
+  const cardsData2 = [
+    {
+      idbk: 1,
+      titlebk: "Penulisan Seminar Proposal",
+      contentbk1: " Pengerjaan proposal, laporan BAB 1-3",
+      contentbk2: "Revisi 3X",
+      contentbk3: "Kuantiatif/kualitatif",
+      hargabk: "RP 2.500.000/Nego",
+    }
+   
+  ];
 
   // Membagi cardsData menjadi kelompok-kelompok berisi masing-masing 5 card
   const groupedCards = [];
@@ -67,6 +74,10 @@ const Home = () => {
   const groupedCards1 = [];
   for (let i = 0; i < cardsData1.length; i += 5) {
     groupedCards1.push(cardsData1.slice(i, i + 5));
+  }
+  const groupedCards2 = [];
+  for (let i = 0; i < cardsData2.length; i += 5) {
+    groupedCards2.push(cardsData2.slice(i, i + 5));
   }
   const scrollToLayanan = () => {
     scrollToRef(layananRef);
@@ -91,9 +102,9 @@ const Home = () => {
           membutuhkan bantuan.
         </p>
 
-        {/* <Link to="/joki">Joki</Link> */}
+       
 
-        {/* Card section */}
+<h1>IT</h1>
         {groupedCards.map((group, groupIndex) => (
           <div
             key={groupIndex}
@@ -138,8 +149,9 @@ const Home = () => {
         ))}
         </div>
       </main>
+
       <div ref={kelasitRef}>
-        <p>Selain itu kami juga membuka kelas IT</p>
+        <h1>Selain itu kami juga membuka kelas IT</h1>
         {groupedCards1.map((group, groupIndex) => (
           <div
             key={groupIndex}
@@ -168,6 +180,51 @@ const Home = () => {
 
                 <div style={{ position: "absolute", bottom: -15 }}>
                   <p>{card.harga1}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <div>
+      <h1>Bimbingan Konseling</h1>
+        {groupedCards2.map((group, groupIndex) => (
+          <div
+            key={groupIndex}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "20px",
+            }}
+          >
+            {group.map((card) => (
+              <div
+                key={card.idbk}
+                style={{
+                  backgroundColor: "#3F4E4F",
+                  color: "#DCD7C9",
+                  width: "auto",
+                  border: "1px solid #ccc",
+                  padding: "15px",
+                  borderRadius: "8px",
+                  marginBottom: "20px",
+                  position: "relative",
+                  paddingBottom: "15px",
+                }}
+              >
+                <h3>{card.titlebk}</h3>
+                <p>{card.contentbk1}</p>
+                <p>{card.contentbk2}</p>
+                <p>{card.contentbk3}</p>
+                {/* Menetapkan elemen harga di bagian bawah card */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    marginBottom: "2px",
+                  }}
+                >
+                  {card.hargabk}
                 </div>
               </div>
             ))}

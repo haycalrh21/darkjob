@@ -5,6 +5,7 @@ const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
   return (
     <header style={{ backgroundColor: '#A27B5C', color: '#DCD7C9', padding: '10px' }}>
       <h1 style={{  fontSize: '24px' }}>
+
         Layanan Joki Skripsi
       </h1>
       <Link

@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <div>
-<img src='/Logonyasihokeh.png' style={{ width: '100px' }} alt="3" />
+<img src='/inilogo.png' style={{ width: '100px' }} alt="3" />
 
     <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
 

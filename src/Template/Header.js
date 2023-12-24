@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 
+const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
 
 
 
   return (
     <div>
-<img src={process.env.PUBLIC_URL + '/inioke.jpg'} style={{ width: '100px' }} alt="1" />
+      <div>
+<img src='/inioke.jpg' style={{width:'100px'}} alt="coba" />
 
+
+</div>
     <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
 
       {/* Hamburger menu button for mobile */}

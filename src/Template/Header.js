@@ -1,29 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleToggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header style={{ backgroundColor: '#A27B5C', color: '#DCD7C9', padding: '10px' }}>
-      <h1 style={{  fontSize: '24px' }}>
+    <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
+      <img src='inioke.png' style={{ width: 100 }} alt="Logo" />
 
-        Layanan Joki Skripsi
-      </h1>
-      <Link
-          to="/#layanan"
-          onClick={scrollToLayanan}
-          style={{ textDecoration: 'none', padding: '8px 16px', backgroundColor: '#4CAF50', color: 'white', borderRadius: '4px', marginRight: '10px' }}
-        >
-          Layanan
-        </Link>
-        <Link
-          to="/#kelasit"
-          onClick={scrollToKelasIT}
-          style={{ textDecoration: 'none', padding: '8px 16px', backgroundColor: '#4CAF50', color: 'white', borderRadius: '4px' }}
-        >
-          Kelas IT
-        </Link>
-      <div style={{ textAlign: 'center', marginTop: '10px' }}>
+      {/* Hamburger menu button for mobile */}
 
+
+      {/* Desktop navigation */}
+      <div style={{ position: 'absolute', top: '40px', right: '20px', display: 'block' }}>
+        <button className=''>
+          <input
+            className='rounded-lg'
+            type="search"
+            placeholder="Search"
+          />
+          <svg >
+            {/* <path style={{ color: 'darkblue' }} d="M120.386 15.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" strokeWidth="2" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"></path> */}
+          </svg>
+        </button>
+      </div>
+
+
+
+      <div style={{ textAlign: 'center', marginTop: '-10px' }}>
+        {/* Additional content can be added here */}
       </div>
     </header>
   );

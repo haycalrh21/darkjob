@@ -12,7 +12,7 @@ const Home = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = ['inioke.png', 'testimoni2.png', 'testimoni1.png', 'testimoni3.jpeg'];
+  const images = ['inilogo.png', 'testimoni2.png', 'testimoni1.png', 'testimoni3.jpeg'];
 
   useEffect(() => {
     const interval = setInterval(() => {

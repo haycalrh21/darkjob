@@ -12,9 +12,12 @@ const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
 
 
   return (
+    
     <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
-      <img src={images[0]} style={{ width: 100 }} alt="Logo" />
+<div>
+<img src={images[0]} style={{ width: 100 }} alt="Logo" />
 
+</div>
       {/* Hamburger menu button for mobile */}
 
 

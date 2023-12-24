@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+// import { Link } from 'react-router-dom';
 
 
 
 
-const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
+const Header = () => {
 
 
 
   return (
     <div>
-<img src={process.env.PUBLIC_URL + '/inioke1.png'} style={{ width: '100px' }} alt="1" />
+<img src='/inioke1.png' style={{ width: '100px' }} alt="2" />
 
     <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
 

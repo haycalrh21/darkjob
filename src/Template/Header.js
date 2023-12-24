@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
+
+
 const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -8,14 +11,15 @@ const Header = ({ scrollToLayanan, scrollToKelasIT }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const images = ['inioke.png'];
+
 
 
   return (
     
     <header className='' style={{ background: 'linear-gradient(41deg, rgba(158,158,158,1) 55%, rgba(193,176,127,1) 67%, rgba(200,182,132,1) 71%, rgba(203,187,141,1) 76%, rgba(158,158,158,1) 79%)', color: '#DCD7C9', padding: '10px' }}>
 <div>
-<img src={images[0]} style={{ width: 100 }} alt="Logo" />
+<img src={process.env.PUBLIC_URL + '/inioke.png'} style={{width:'100px'}} alt="Inioke" />
+
 
 </div>
       {/* Hamburger menu button for mobile */}

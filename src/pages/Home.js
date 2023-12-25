@@ -157,7 +157,7 @@ const Home = () => {
 
         </div>
         <div>
-          Bimbingan Konsuling
+          Bimbingan Konseling
         {renderCards(cardsData2)}
 
         </div>

@@ -27,22 +27,24 @@ const Home = () => {
       id: 1,
       judulit: "Web",
       isiit1: "Laravel/ React Js",
-      isiit2: "revisi 3X",
-      hargait: "RP 4.000.000/Nego",
+      isiit2: "Revisi 3X",
+      isiit3: "Basic , crud login dan laporan. untuk yg lain bisa di konsultasi",
+      hargait: "Rp 4.000.000/Nego",
     },
     {
       id: 2,
       judulit: "Aplikasi Desktop",
       isiit1: "Java Netbeans",
-      isiit2: "revisi 3X",
-      hargait: "RP 1.500.000/Nego",
+      isiit2: "Revisi 3X",
+      isiit3: "Basic , crud login dan laporan. untuk yg lain bisa di konsultasi",
+      hargait: "Rp 1.500.000/Nego",
     },
     {
       id: 3,
       judulit: "Penulisan Skripsi IT",
       isiit1: "Penulisan Bab 1-5",
       isiit2: "revisi 3X",
-      hargait: "RP 2.500.000/Nego",
+      hargait: "Rp 2.500.000/Nego",
     },
   ];
 
@@ -52,13 +54,15 @@ const Home = () => {
       id1: 1,
       title1: "Aplikasi Desktop",
       content1: "Java Netbeans",
-      harga1: "RP 500.000",
+      content2: "CRUD, Login dan Laporan",
+      harga1: "Rp 500.000",
     },
     {
       id1: 2,
       title1: " Web ",
       content1: "Laravel/React JS",
-      harga1: "RP 1.500.000",
+      content2: "CRUD, Login dan Laporan",
+      harga1: "Rp 1.500.000",
     },
   ];
 
@@ -69,7 +73,26 @@ const Home = () => {
       contentbk1: " Pengerjaan proposal, laporan BAB 1-3",
       contentbk2: "Revisi 3X",
       contentbk3: "Kuantitatif/kualitatif",
-      hargabk: "RP 2.500.000/Nego",
+      hargabk: "Rp 2.000.000/Nego",
+    },
+  ];
+
+  const cardsData3 = [
+    {
+      idbebas: 1,
+      titlebebas: "Memperbaiki Penulisan Skripsi Jurusan apapun",
+      contentbebas1: "Bebas Memperbaiki dari bab 1 -5 ",
+      contentbebas2: "Revisi 3X",
+      contentbebas3: "Kuantitatif/kualitatif",
+      hargabebas: "Bisa Konsultasi Untuk Harga",
+    },
+    {
+      idbebas: 2,
+      titlebebas: "Memperbaiki Program Coding",
+      contentbebas1: "Bebas Memperbaiki program jenis apapun",
+      contentbebas2: "Revisi 3X",
+      contentbebas3: "laravel,React,Java Netbeans, CI",
+      hargabebas: "Bisa Konsultasi Untuk Harga",
     },
   ];
   const renderCards = (data) => (
@@ -77,22 +100,22 @@ const Home = () => {
       {data.map((card) => (
         <div key={card.id} className={`pricing-item ${card.idbk ? 'cardsData2' : ''}`} style={{ color:'white',background:'#242c44',border: '1px solid white', padding: '10px', margin: '10px', width: '300px' }}>
           <div className="title">
-            <p style={{ fontSize: '16px', margin: '10px 0' }}>{card.judulit || card.title1 || card.titlebk}</p>
+            <p style={{ fontSize: '16px', margin: '10px 0' }}>{card.judulit || card.title1 || card.titlebk || card.titlebebas}</p>
           </div>
-          <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{card.hargait || card.harga1 || card.hargabk}</p>
+          <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{card.hargait || card.harga1 || card.hargabk || card.hargabebas}</p>
           <ul>
-            <li><FontAwesomeIcon icon="fa-solid fa-circle-check" /><span> {card.isiit1 || card.content1 || card.contentbk1}</span></li>
-            {/* <li><FontAwesomeIcon icon="fa-solid fa-circle-check" /><span>{card.isiit2 || card.content2 || card.contentbk2}</span></li> */}
-            {card.isiit2 || card.content2 || card.contentbk2 ? (
+            <li><FontAwesomeIcon icon="fa-solid fa-circle-check" /><span> {card.isiit1 || card.content1 || card.contentbk1|| card.contentbebas1}</span></li>
+            
+            {card.isiit2 || card.content2 || card.contentbk2 ||card.contentbebas2? (
               <li>
                 <FontAwesomeIcon icon="fa-solid fa-circle-check" />
-                <span> {card.isiit2 || card.content2 || card.contentbk2}</span>
+                <span> {card.isiit2 || card.content2 || card.contentbk2 ||card.contentbebas2}</span>
               </li>
             ) : null} 
-            {card.isiit3 || card.content3 || card.contentbk3 ? (
+            {card.isiit3 || card.content3 || card.contentbk3||card.contentbebas3 ? (
               <li>
                 <FontAwesomeIcon icon="fa-solid fa-circle-check" />
-                <span> {card.isiit3 || card.content3 || card.contentbk3}</span>
+                <span> {card.isiit3 || card.content3 || card.contentbk3||card.contentbebas3}</span>
               </li>
             ) : null}
           </ul>
@@ -142,6 +165,10 @@ const Home = () => {
           Skripsi IT
         {renderCards(isiDataIt)}
 
+        </div>        <div>
+          Layanan 
+        {renderCards(cardsData3)}
+
         </div>
       </div>
 
@@ -155,12 +182,12 @@ const Home = () => {
 
         <div style={{ display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden' }}>
       <div style={{ display: 'flex', width: `${images.length * 100}%`, transform: `translateX(${-currentIndex * (100 / images.length)}%)`, transition: 'transform 0.5s ease-in-out' }}>
-        {images.map((image, index) => (
+        {images.map((image,index) => (
           <img
             key={index}
             src={image}
             alt={`Image ${index + 1}`}
-            style={{ width: `${100 / images.length}%` }}
+            style={{width:`${100 / images.length}%`}}
           />
         ))}
       </div>

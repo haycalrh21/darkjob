@@ -102,7 +102,7 @@ const Home = () => {
           <div className="title">
             <p style={{ fontSize: '16px', margin: '10px 0' }}>{card.judulit || card.title1 || card.titlebk || card.titlebebas}</p>
           </div>
-          <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{card.hargait || card.harga1 || card.hargabk || card.hargabebas}</p>
+          {/* <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{card.hargait || card.harga1 || card.hargabk || card.hargabebas}</p> */}
           <ul>
             <li><FontAwesomeIcon icon="fa-solid fa-circle-check" /><span> {card.isiit1 || card.content1 || card.contentbk1|| card.contentbebas1}</span></li>
             
